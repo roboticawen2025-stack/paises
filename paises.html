@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>País aleatorio</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: white;
+    margin-top: 100px;
+  }
+  h1 {
+    font-size: 3em;
+    color: #333;
+  }
+  p {
+    font-size: 1.5em;
+    color: #444;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1 id="pais">–</h1>
+<p>¿Qué conoces de este país?</p>
+<button id="nuevo">Nuevo país</button>
+
+<script>
+  const paises = [
+    "Portugal","Costa Rica","Argentina","Nicaragua","Perú","Uruguay","Rusia",
+    "Ecuador","Bolivia","Panamá","Colombia","México","Venezuela","Paraguay",
+    "Canadá","Chile","España","Brasil"
+  ];
+
+  function mostrarPais() {
+    const pais = paises[Math.floor(Math.random() * paises.length)];
+    document.getElementById('pais').textContent = pais;
+  }
+
+  document.getElementById('nuevo').addEventListener('click', mostrarPais);
+
+  // Mostrar un país al cargar
+  mostrarPais();
+</script>
+
+</body>
+</html>
